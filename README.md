@@ -1,12 +1,14 @@
 # [FreeBling - Web3 Dapp](https://app.freebling.io/)
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
+<ul>
+  <li>
+    DApp as a NFT marketplace integrating with MetaMask using Web3.js
+  </li>
+  <li>
+    Dapp developed with Web3.js, Typescript, React + TailWind
+  </li>
+  <li>
+    It contains only DApp codebase because its contract is private still now.
+  </li>
+</ul>
 
