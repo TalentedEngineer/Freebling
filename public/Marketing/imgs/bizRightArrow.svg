@@ -1,0 +1,7 @@
+<svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="42" cy="42" r="40" transform="rotate(-180 42 42)" fill="#0E1517"/>
+<circle cx="42" cy="42" r="40.75" transform="rotate(-180 42 42)" stroke="#415C5C" stroke-opacity="0.4" stroke-width="1.5"/>
+<path d="M29 41.5L54 41.5" stroke="white" stroke-width="1.5"/>
+<path d="M46.5 49V49C46.5 44.8579 49.8579 41.5 54 41.5V41.5" stroke="white" stroke-width="1.5"/>
+<path d="M46.5 34V34C46.5 38.1421 49.8579 41.5 54 41.5V41.5" stroke="white" stroke-width="1.5"/>
+</svg>

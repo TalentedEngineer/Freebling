@@ -1,0 +1,737 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Layout  */
+  .dashboardContainerWrapper {
+    @apply flex flex-row p-0 mb-20 lg:mb-0 w-full fixed left-0 right-0 bottom-0 top-0
+  }
+  .dashboardContainer {
+    @apply p-0 flex flex-1 flex-col w-full background_lightBlack min-w-0 overflow-auto h-full
+  }
+  .sideBar {
+    @apply hidden w-48 lg:block px-3 py-5 sticky overflow-y-hidden
+  }
+  .mainContent {
+    @apply p-5 pt-10 md:p-10
+  }
+  .rowSection {
+    @apply mb-5
+  }
+
+  .linkedItem {
+    @apply flex flex-row items-center justify-between bg-teal-200 p-2 rounded-sm my-2.5
+  }
+  
+  /* Side Nav  */
+  .SideNavLink {
+    @apply bg-transparent hover:bg-teal-700/70 flex items-center justify-start px-5 py-3 text-white/30 hover:text-white transition duration-200 ease-in-out rounded-sm space-x-4
+  }
+  .LinkTxt {
+    @apply text-white text-sm font-Ubuntu-Medium group-hover:text-teal-600 hover:text-teal-600
+  }
+  .Disabled {
+    @apply text-white/30 group-hover:text-white/30
+  }
+  .UtilityIcon {
+    @apply h-5 w-5 text-white group-hover:text-teal-600
+  }
+
+  /* Homepage  */
+  .bgHome {
+    background-image: url('/assets/backgrounds/home-bg.png');
+  }
+
+  /* Headers  */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-Ubuntu-Bold
+  }
+  .h1 {
+    @apply flex space-x-3 items-center text-xl font-Ubuntu-Medium
+  }
+  .h2 {
+    @apply text-lg md:text-xl font-Ubuntu-Medium text-white mb-5
+  }
+  .border {
+    @apply border-[1.5px] border-jade-100/20
+  }
+  .icon {
+    @apply h-9 w-6 lg:w-9 cursor-pointer rounded-sm lg:p-1 text-white
+  }
+  .NavIcon {
+    @apply h-6 w-6 cursor-pointer text-white hover:text-teal-500
+  }
+  .card {
+    @apply rounded-lg border border-jade-100/20 p-3.5
+  }
+
+  /* Utility Elements  */
+  .fbTabList {
+    @apply border border-jade-100 rounded-sm w-full lg:w-fit h-fit
+  }
+  .fbTab {
+    @apply px-10 py-2 text-base font-Ubuntu-Bold block relative cursor-pointer text-center md:inline-block
+  }
+  .bg-extraLightPrimaryGreen {
+    @apply bg-teal-900/30 text-teal-600
+  }
+
+  .popoverLink {
+    @apply flex items-center px-4 py-2 text-sm text-white/60 hover:text-white hover:bg-teal-200/90 hover:backdrop-blur-sm space-x-3 rounded-sm
+  }
+
+  /* prizes */
+  .truncate-height {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Adjust this value to control the number of visible lines */
+  }
+
+  .truncate-middle {
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .truncate-middle:before,
+  .truncate-middle:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    pointer-events: none;
+  }
+  
+  .truncate-middle:before {
+    left: 0;
+  }
+  
+  .truncate-middle:after {
+    right: 0;
+  }
+  
+
+  /* Buttons  */
+  .buttonPrimary { 
+      @apply rounded-sm bg-teal-300 border-teal-100 hover:bg-teal-300/50 text-white text-base px-8 py-3 transition duration-150 ease-out hover:ease-in
+  }
+  .buttonSecondary {
+    @apply text-white text-sm px-8 py-4 transition duration-150 ease-out hover:ease-in uppercase rounded-sm hover:bg-teal-900 
+  }
+  .buttonTertiary {
+    @apply bg-teal-900/5 rounded-sm border border-jade-100 px-6 py-3 transition duration-150 ease-out hover:border-teal-900 hover:bg-teal-900
+  } 
+
+  .learnLink {
+    @apply block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-white before:hidden hover:text-fbyellow hover:before:block
+  }
+  .socialSignup {
+    @apply flex-1 flex items-center justify-center bg-teal-900/5 rounded-sm py-[15px] px-[30px] cursor-pointer transition duration-200 ease-in-out hover:bg-teal-900
+  }
+  .inputField {
+    @apply w-full h-10 rounded-full px-[22px] bg-teal-900/5 border border-teal-100/20 text-base leading-5 focus-visible:outline-0 text-left
+  }
+  .inputFieldSelected {
+    @apply bg-teal-900/100
+  }
+  .inputArea {
+    @apply w-full h-10 rounded-lg px-[22px] bg-teal-900/5 border border-teal-100/20 text-base leading-5 focus-visible:outline-0 text-left
+  }
+  .inputCheckbox {
+    @apply w-[22px] h-[22px] border border-teal-100/20 bg-teal-900/5 rounded-[6px] focus:ring-offset-0 focus:ring-transparent focus-visible:ring-transparent focus:outline-none focus-visible:outline-none
+  }
+  .responsiveTable {
+    @apply w-full flex flex-row overflow-hidden my-5 text-left md:inline-table text-sm
+  }
+  .responsiveTableHeader {
+    @apply max-w-[100px] pr-6 md:pr-0
+  }
+  .responsiveTableHeaderRow {
+    @apply flex flex-col sm:table-row mb-2 sm:mb-0 md:border-b-[1.5px] md:border-jade-100/20 text-white/40
+  }
+  .responsiveTableBody {
+    @apply flex-1 sm:flex-none
+  }
+  .responsiveTableBodyRow {
+    @apply flex flex-col sm:table-row mb-2 sm:mb-0
+  }
+  .userInfoCol {
+    @apply text-base w-full mb-5 md:mb-0 rounded-lg border border-jade-100/20 p-5
+  }
+
+
+  /* Marketing */
+  .icon {
+    @apply h-9 w-6 lg:w-9 cursor-pointer rounded-sm lg:p-1 text-white
+  }
+  /* .buttonPrimary { 
+      @apply rounded-sm bg-teal-800 hover:bg-teal-800/50 text-white text-sm px-8 py-4 mt-4 transition duration-150 ease-out hover:ease-in
+  }
+  .buttonSecondary {
+    @apply text-white text-sm px-8 py-4 mt-4 transition duration-150 ease-out hover:ease-in uppercase rounded-sm hover:bg-teal-800
+  }
+  .buttonTertiary {
+    @apply bg-transparent rounded-sm border border-jade-100 px-6 py-3 mt-4 transition duration-150 ease-out hover:border-teal-800 hover:bg-teal-800
+  }  */
+  .learnLink {
+    @apply block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-white before:hidden hover:text-fbyellow hover:before:block
+  }
+}
+
+.responsiveTable td, .responsiveTable th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.responsiveTableBodyRow td:not(:last-child) {
+  border-bottom: 0;
+}
+
+
+/* responsive tables - border lines */
+.responsiveTable tr::after {
+  content: '';
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100vw;
+  height: 1.5px;
+  left: 0;
+  display: block;
+  clear: both;
+  background-color: #415C5C;
+  opacity: 0.2;
+}
+.responsiveTable tr:last-child::after {
+  display: none;
+}
+
+/* set min height of multi-line rows on mobile */
+.followersTable tr td:nth-child(5),
+.followersTable tr th:nth-child(5) {
+  min-height: 65px
+}
+
+@media (min-width: 768px) {
+  .responsiveTable {
+    display: inline-table !important;
+  }
+
+  .responsiveTable thead tr:not(:first-child),
+  .responsiveTable tr::after {
+    display: none;
+  }
+
+  /* followers - center last 4 columns */
+  .followersTable tr td:nth-child(3),.followersTable tr td:nth-child(4),.followersTable tr td:nth-child(5),.followersTable tr td:nth-child(6),
+  .followersTable tr th:nth-child(3),.followersTable tr th:nth-child(4),.followersTable tr th:nth-child(5),.followersTable tr th:nth-child(6) {
+    text-align: center;
+  }
+}
+
+
+
+
+:root {
+  --background-gradient: radial-gradient(67.08% 94.34% at 22.57% 91.8%,
+      #162126 0%,
+      rgba(22, 31, 35, 0) 100%)
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ,
+    radial-gradient(85.94% 85.94% at 93.33% 14.06%,
+      #1c2f2f 0%,
+      rgba(28, 47, 47, 0) 100%)
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ,
+    #0c1213;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.gradientBody {
+  background: radial-gradient(67.08% 94.34% at 22.57% 91.8%,
+      #162126 0%,
+      rgba(22, 31, 35, 0) 100%)
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ,
+    radial-gradient(85.94% 85.94% at 93.33% 14.06%,
+      #1c2f2f 0%,
+      rgba(28, 47, 47, 0) 100%)
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ,
+    #0c1213;
+}
+
+body {
+  color: #fff;
+  background: radial-gradient(67.08% 94.34% at 22.57% 91.8%,
+      #162126 0%,
+      rgba(22, 31, 35, 0) 100%)
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ,
+    radial-gradient(85.94% 85.94% at 93.33% 14.06%,
+      #1c2f2f 0%,
+      rgba(28, 47, 47, 0) 100%)
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ,
+    #0c1213;
+  font-family: "Ubuntu-Regular", sans-serif;
+  height: 100vh;
+}
+p{
+  margin: 10px 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* TAILWIND CSS */
+@layer base {
+
+  html,
+  body {
+    font-family: "Ubuntu-Regular", sans-serif;
+  }
+}
+
+/* FONTS START */
+/* Ubuntu  */
+@font-face {
+  font-family: 'Ubuntu-Bold';
+  src: url('../public/fonts/Ubuntu-Bold.woff2') format('woff2'),
+      url('../public/fonts/Ubuntu-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu-BoldItalic';
+  src: url('../public/fonts/Ubuntu-BoldItalic.woff2') format('woff2'),
+      url('../public/fonts/Ubuntu-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu-Italic';
+  src: url('../public/fonts/Ubuntu-Italic.woff2') format('woff2'),
+      url('../public/fonts/Ubuntu-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu-Light';
+  src: url('../public/fonts/Ubuntu-Light.woff2') format('woff2'),
+      url('../public/fonts/Ubuntu-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu-Medium';
+  src: url('../public/fonts/Ubuntu-Medium.woff2') format('woff2'),
+      url('../public/fonts/Ubuntu-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu-LightItalic';
+  src: url('../public/fonts/Ubuntu-LightItalic.woff2') format('woff2'),
+      url('../public/fonts/Ubuntu-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  src: url('../public/fonts/Ubuntu-Regular.woff2') format('woff2'),
+      url('../public/fonts/Ubuntu-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu-MediumItalic';
+  src: url('../public/fonts/Ubuntu-MediumItalic.woff2') format('woff2'),
+      url('../public/fonts/Ubuntu-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
+/* Clash Display  */
+@font-face {
+  font-family: "ClashDisplay-Variable";
+  src: url("../public/fonts/ClashDisplay-Variable.woff2") format("woff2"),
+    url("../public/fonts/ClashDisplay-Variable.woff") format("woff"),
+    url("../public/fonts/ClashDisplay-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Extralight";
+  src: url("../public/fonts/ClashDisplay-Extralight.woff2") format("woff2"),
+    url("../public/fonts/ClashDisplay-Extralight.woff") format("woff"),
+    url("../public/fonts/ClashDisplay-Extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Light";
+  src: url("../public/fonts/ClashDisplay-Light.woff2") format("woff2"),
+    url("../public/fonts/ClashDisplay-Light.woff") format("woff"),
+    url("../public/fonts/ClashDisplay-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Regular";
+  src: url("../public/fonts/ClashDisplay-Regular.woff2") format("woff2"),
+    url("../public/fonts/ClashDisplay-Regular.woff") format("woff"),
+    url("../public/fonts/ClashDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Medium";
+  src: url("../public/fonts/ClashDisplay-Medium.woff2") format("woff2"),
+    url("../public/fonts/ClashDisplay-Medium.woff") format("woff"),
+    url("../public/fonts/ClashDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Semibold";
+  src: url("../public/fonts/ClashDisplay-Semibold.woff2") format("woff2"),
+    url("../public/fonts/ClashDisplay-Semibold.woff") format("woff"),
+    url("../public/fonts/ClashDisplay-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay-Bold";
+  src: url("../public/fonts/ClashDisplay-Bold.woff2") format("woff2"),
+    url("../public/fonts/ClashDisplay-Bold.woff") format("woff"),
+    url("../public/fonts/ClashDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* FONTS END */
+
+/* BACKGROUNDS */
+.background_black {
+  background: rgb(5,8,8);
+  background: linear-gradient(33deg, rgba(5,8,8,1) 0%, rgba(14,23,23,1) 52%, rgba(17,28,28,1) 100%);
+}
+
+.background_lightBlack {
+  background: rgb(5,8,8);
+  background: linear-gradient(33deg, rgba(5,8,8,1) 0%, rgba(14,23,23,1) 47%, rgba(17,28,28,1) 100%);
+}
+
+@media (min-width: 1024px) {
+  .background_lightBlack {
+    background: rgb(5,8,8);
+    background: linear-gradient(33deg, rgba(5,8,8,1) 0%, rgba(14,23,23,1) 47%, rgba(17,28,28,1) 100%);
+  }
+}
+
+.loader {
+  border: 10px solid var(white);
+  border-top: 10px solid var(white);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Centered Image Code */
+
+.container {
+  height: 500px;
+  position: relative;
+  border: 3px solid #dbe4ed;
+  /* Border color is optional */
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* GRID AREA FOR CREATE GIVEAWAY */
+.grid_giveaway_tabs {
+  grid-area: tabs;
+}
+
+.grid_giveaway_buttons {
+  grid-area: buttons;
+}
+
+.grid_giveaway_content {
+  grid-area: content;
+}
+
+.grid_template_area {
+  grid-template-areas:
+    "tabs tabs buttons"
+    "content content content";
+}
+
+@media (max-width: 1024px) {
+  .grid_template_area {
+    grid-template-areas:
+      "tabs tabs tabs"
+      "content content content"
+      "buttons buttons buttons";
+  }
+}
+
+/* DATE INPUT */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-image: url(../public/assets/images/calendar.svg);
+  z-index: 1;
+}
+
+/* TIME INPUT */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background-image: url(../public/assets/images/clock.svg);
+  z-index: 1;
+}
+
+[type="checkbox"]:checked {
+  background-image: url(../public/assets/images/check.svg) !important;
+  background-size: auto !important;
+}
+
+/* GRID AREA FOR TASKS */
+.grid_tasks_heading {
+  grid-area: heading;
+}
+
+.grid_tasks_buttons {
+  grid-area: buttons;
+}
+
+.grid_tasks_content {
+  grid-area: content;
+}
+
+.grid_tasks_area {
+  grid-template-areas:
+    "heading heading buttons"
+    "content content content";
+}
+
+@media (max-width: 768px) {
+  .grid_tasks_area {
+    grid-template-areas:
+      "heading heading heading"
+      "content content content"
+      "buttons buttons buttons";
+  }
+}
+
+.popupTasksOverlay {
+  background: rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+
+/* More Marketing Styles */
+/* BACKGROUNDS */
+.background_black {
+  background: linear-gradient(180deg, #040606 0%, #040606 100%);
+}
+
+.background_lightBlack {
+  background: transparent;
+}
+
+@media (min-width: 1024px) {
+  .background_lightBlack {
+    background: linear-gradient(180deg, #040606 0%, rgb(4 6 6 / 40%) 20%);
+  }
+}
+
+/* CUSTOM SLIDER ARROWS */
+.CustomArrow {
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  width: 84px;
+  height: 84px;
+  top: 35%;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.UserLeftArrow {
+  left: 0;
+  background-image: url("/assets/imgs/userLeftArrow.svg");
+}
+.UserRightArrow {
+  right: 0;
+  background-image: url("/assets/imgs/userRightArrow.svg");
+}
+
+/* CUSTOM CARD and Slider Arrows */
+.css-1qzevvg {
+  bottom: 59%;
+  max-width: 415px;
+  width: 92% !important;
+  z-index: 100;
+}
+
+/* .css-doq0dk {
+  max-width: 626px !important;
+} */
+/* faded 2nd card */
+.css-doq0dk .css-1fzpoyk:nth-child(1) {
+  transform: translateY(-51%) translateX(104%) scale(0.85) rotate(5deg) perspective(700px) !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
+  filter: blur(2px);
+}
+/* faded last 3rd card */
+.css-doq0dk .css-1fzpoyk:nth-child(3) {
+  transform: translateY(-46%) translateX(-90%) scale(0.66) rotate(10deg) perspective(700px) !important;
+  opacity: 0.5 !important;
+  z-index: 0 !important;
+  filter: blur(3px);
+}
+/* faded last 3rd card */
+.css-doq0dk .css-1fzpoyk:nth-child(8),
+.css-doq0dk .css-1fzpoyk:nth-child(4),
+.css-doq0dk .css-1fzpoyk:nth-child(5),
+.css-doq0dk .css-1fzpoyk:nth-child(6),
+.css-doq0dk .css-1fzpoyk:nth-child(7) {
+  transform: translateY(-45%) translateX(-45%) scale(0.65) rotate(10deg) perspective(700px) !important;
+  opacity: 1 !important;
+}
+
+@media screen and (max-width: 1124px) {
+  .css-1qzevvg {
+    max-width: 626px !important;
+    width: 97% !important;
+  }
+  /* faded 2nd card */
+  .css-doq0dk .css-1fzpoyk:nth-child(1) {
+    transform: translateY(-47%) translateX(47%) scale(0.92) rotate(5deg) perspective(700px) !important;
+    opacity: 1 !important;
+  }
+  /* faded last 3rd card */
+  .css-doq0dk .css-1fzpoyk:nth-child(3) {
+    transform: translateY(-40%) translateX(-93%) scale(0.84) rotate(10deg) perspective(700px) !important;
+    opacity: 1 !important;
+  }
+}
+/* Arrows */
+  
+.css-1qzevvg img {
+  width: 80px;
+  height: 80px !important;
+  opacity: 0.8;
+}
+.css-1qzevvg img:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.css-1qzevvg img:nth-child(1){
+  content: url("/assets/imgs/userLeftArrow.svg")
+}
+.css-1qzevvg img:nth-child(2){
+  content: url("/assets/imgs/userRightArrow.svg")
+}
+
+/* .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: bisque;
+  width: 16rem;
+  height: fit-content;
+  padding: 0 2rem 2rem 2rem;
+  border-radius: 10px;
+}
+
+.card img {
+  margin-top: -20%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.card h2 {
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.card p {
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card .btnn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
